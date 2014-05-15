@@ -79,14 +79,14 @@ namespace Anaglyfy
 
     }
 
-        private static int[,] copyImage(lab01biometria.image_RGB rgb)
+        public static int[,] copyImage(lab01biometria.image_RGB rgb)
         {
 
             int[,] Temp = new int[rgb.w, rgb.h];
             return Temp;
         }
 
-        private static void tab2int(int[,] R, int[,] G, int[,] B, lab01biometria.image_RGB rgb)
+        public static void tab2int(int[,] R, int[,] G, int[,] B, lab01biometria.image_RGB rgb)
         {
             for (int c = 0; c < rgb.w; c++)
             {
@@ -102,21 +102,18 @@ namespace Anaglyfy
 
 
         }
-        public void chackafterdubois(lab01biometria.image_RGB rgb)
+        public  static void chackafterdubois(int[,] rgb, int w, int h)
         {
-            Parallel.For(0, rgb.w, i =>
+            Parallel.For(0, w, i =>
             {
 
-                for (int j = 0; j < rgb.h; j++)
+                for (int j = 0; j <h; j++)
                 {
 
-                    rgb.R[i][j] = (byte)(rgb.R[i][j] > 255 ? 255 : rgb.R[i][j]);
-                    rgb.G[i][j] = (byte)(rgb.G[i][j] > 255 ? 255 : rgb.G[i][j]);
-                    rgb.B[i][j] = (byte)(rgb.B[i][j] > 255 ? 255 : rgb.B[i][j]);
+                    rgb[i, j] = (byte)(rgb[i, j] > 255 ? 255 : rgb[i, j]);
 
-                    rgb.R[i][j] = (byte)(rgb.R[i][j] < 0 ? 0 : rgb.R[i][j]);
-                    rgb.G[i][j] = (byte)(rgb.G[i][j] < 0 ? 0 : rgb.G[i][j]);
-                    rgb.B[i][j] = (byte)(rgb.B[i][j] < 0 ? 0 : rgb.B[i][j]);
+                    rgb[i, j] = (byte)(rgb[i, j] < 0 ? 0 : rgb[i, j]);
+                   
 
                 }
 

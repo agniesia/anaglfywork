@@ -62,62 +62,7 @@ namespace Anaglyfy
             wskaznik = new float[,] { { 0F, 0F, 0F }, { 0F, 1F, 0F }, { 0F, 0F, 1F } }; 
         }
     }
-    class DuboisLeft :lab01biometria.Visitor
-    {
-        float[,] wskaznik;
-        public DuboisLeft()
-        {
-            wskaznik = new float[,] { { 0.4561F, 0.500484F, 0.176381F }, { -0.0400822F, -0.0378246F, -0.0157589F }, { -0.0152161F,-0.0205971F,  - 0.00546856F } }; 
-
-        }
-
-        public void rob(lab01biometria.image_as_tab image)
-        {
-            image.Accept(this);
-
-
-
-        }
-        public void Visit(lab01biometria.image_RGB rgb)
-        {
-            doAnaglfy(rgb);
-
-        }
-
-        public void Visit(lab01biometria.image_Gray Grey)
-        {
-
-        }
-
-
-    }
-    class DuboisRight : lab01biometria.Visitor
-    {
-        float[,] wskaznik;
-        public DuboisRight()
-        {
-            wskaznik = new float[,] { { -0.0434706F, -0.0879388F, -0.00155529F }, { 0.378476F, 0.73364F, -0.0184503F }, { -0.0721527F, -0.112961F, 1.2264F } };
-
-        }
-        public void rob(lab01biometria.image_as_tab image)
-        {
-            image.Accept(this);
-
-
-
-        }
-        public void Visit(lab01biometria.image_RGB rgb)
-        {
-            doAnaglfy(rgb);
-
-        }
-
-        public void Visit(lab01biometria.image_Gray Grey)
-        {
-
-        }
-
-    }
+    
     class OptimizedAnaglyphsRight: Anaglifyoperation
     {
         public OptimizedAnaglyphsRight()

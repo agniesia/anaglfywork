@@ -175,8 +175,8 @@ namespace Anaglyph
                 lab01biometria.image_RGB Optimazeright = new lab01biometria.image_RGB(rightcopy.utab, rightcopy.w, rightcopy.h);
                 lab01biometria.image_RGB Optimazeleft = new lab01biometria.image_RGB(leftcopy.utab, leftcopy.w, leftcopy.h);
 
-                Anaglyfy.Anaglifyoperation DuboisvisitLeft = new Anaglyfy.DuboisLeft();
-                Anaglyfy.Anaglifyoperation DuboisvisitRight = new Anaglyfy.DuboisRight();
+                Anaglyph.Anaglyf.DuboisLeft DuboisvisitLeft = new Anaglyph.Anaglyf.DuboisLeft();
+                Anaglyph.Anaglyf.DuboisRight DuboisvisitRight = new Anaglyph.Anaglyf.DuboisRight();
                 lab01biometria.image_RGB Duboisright = new lab01biometria.image_RGB(rightcopy.utab, rightcopy.w, rightcopy.h);
                 lab01biometria.image_RGB Duboiszeleft = new lab01biometria.image_RGB(leftcopy.utab, leftcopy.w, leftcopy.h);
 

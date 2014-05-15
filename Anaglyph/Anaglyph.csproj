@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="Anaglyf\Anaglifyoperation.cs" />
     <Compile Include="Anaglyf\Anaglyphclass.cs" />
+    <Compile Include="Anaglyf\Dubois.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
