@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Anaglyph.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Anaglyph"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.TopAppBar>
+		<AppBar Margin="0,0,0,-141">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<AppBarButton x:Name="righteye" HorizontalAlignment="Center" Label="Right eye image" VerticalAlignment="Center" Icon="Pictures" Click="open_ClickRight" Margin="0"/>
+				<AppBarButton x:Name="lefteye" HorizontalAlignment="Center" Height="100" Label="Left eye image" VerticalAlignment="Center" Width="100" Icon="Pictures" Grid.Column="1" Click="open_ClickLeft" Margin="0"/>
+			</Grid>
+		</AppBar>
+	</Page.TopAppBar>
+	<Page.BottomAppBar>
+		<AppBar Margin="0,-143,0,0">
+			<Grid x:Name="buttongrid">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="x" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Click="x_Click"/>
+				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
+				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
+				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
+				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
+			</Grid>
+		</AppBar>
+	</Page.BottomAppBar>
+
+    <Grid Height="768" Width="1366" Background="#FFC68787">
+    	<FlipView x:Name="flipimage" Margin="10">
+    		<Image x:Name="TrueAnaglyphs" Margin="0"/>
+    		<Image x:Name="GeryAnaglyphs" Margin="0"/>
+    		<Image x:Name="ColorAnaglyphs" Margin="0"/>
+    		<Image x:Name="HalfColorAnaglyphs"/>
+    		<Image x:Name="OptimizedAnaglyphs"/>
+    		<Image x:Name="DuboisAnaglyphs"/>
+    	</FlipView>
+	</Grid>
+</Page>
