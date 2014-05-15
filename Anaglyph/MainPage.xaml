@@ -18,33 +18,18 @@
 			</Grid>
 		</AppBar>
 	</Page.TopAppBar>
-	<Page.BottomAppBar>
-		<AppBar Margin="0,-143,0,0">
-			<Grid x:Name="buttongrid">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Button x:Name="x" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Click="x_Click"/>
-				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
-				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
-				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
-				<Button Content="Button" HorizontalAlignment="Left" Margin="138,63,0,0" VerticalAlignment="Top"/>
-			</Grid>
-		</AppBar>
-	</Page.BottomAppBar>
 
-    <Grid Height="768" Width="1366" Background="#FFC68787">
+    <Grid Height="768" Width="1366" Background="#FFFCF9F9">
     	<FlipView x:Name="flipimage" Margin="10">
-    		<Image x:Name="TrueAnaglyphs" Margin="0"/>
-    		<Image x:Name="GeryAnaglyphs" Margin="0"/>
-    		<Image x:Name="ColorAnaglyphs" Margin="0"/>
-    		<Image x:Name="HalfColorAnaglyphs"/>
-    		<Image x:Name="OptimizedAnaglyphs"/>
-    		<Image x:Name="DuboisAnaglyphs"/>
+    		<Image x:Name="TrueAnaglyphs" Margin="0" Tag="TrueAnaglyphs"/>
+    		<Image x:Name="GeryAnaglyphs" Margin="0" Tag="GeryAnaglyphs"/>
+    		<Image x:Name="ColorAnaglyphs" Margin="0" Tag="ColorAnaglyphs"/>
+    		<Image x:Name="HalfColorAnaglyphs" Tag="HalfColorAnaglyphs"/>
+    		<Image x:Name="OptimizedAnaglyphs" Tag="OptimizedAnaglyphs"/>
+    		<Image x:Name="DuboisAnaglyphs" Tag="DuboisAnaglyphs"/>
     	</FlipView>
+    	<TextBlock x:Name="Warning" HorizontalAlignment="Left" Margin="267,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64" Foreground="#FF111010" >
+    	
+    	</TextBlock>
 	</Grid>
 </Page>

@@ -93,14 +93,35 @@ namespace Anaglyfy
                 for (int p = 0; p < rgb.h; p++)
                 {
                     rgb.R[c][p] = (byte)R[c, p];
-                    rgb.G[c][p] = (byte)B[c, p];
-                    rgb.B[c][p] = (byte)G[c, p];
+                    rgb.G[c][p] = (byte)G[c, p];
+                    rgb.B[c][p] = (byte)B[c, p];
                 }
 
 
             }
 
 
+        }
+        public void chackafterdubois(lab01biometria.image_RGB rgb)
+        {
+            Parallel.For(0, rgb.w, i =>
+            {
+
+                for (int j = 0; j < rgb.h; j++)
+                {
+
+                    rgb.R[i][j] = (byte)(rgb.R[i][j] > 255 ? 255 : rgb.R[i][j]);
+                    rgb.G[i][j] = (byte)(rgb.G[i][j] > 255 ? 255 : rgb.G[i][j]);
+                    rgb.B[i][j] = (byte)(rgb.B[i][j] > 255 ? 255 : rgb.B[i][j]);
+
+                    rgb.R[i][j] = (byte)(rgb.R[i][j] < 0 ? 0 : rgb.R[i][j]);
+                    rgb.G[i][j] = (byte)(rgb.G[i][j] < 0 ? 0 : rgb.G[i][j]);
+                    rgb.B[i][j] = (byte)(rgb.B[i][j] < 0 ? 0 : rgb.B[i][j]);
+
+                }
+
+
+            });
         }
 
 
