@@ -181,23 +181,23 @@ namespace Anaglyph
                 lab01biometria.image_RGB Duboiszeleft = new lab01biometria.image_RGB(leftcopy.utab, leftcopy.w, leftcopy.h);
 
 
-                TruevisitLeft.rob(Trueleft);
-                TruevisitRight.rob(Trueright);
+                TruevisitLeft.rob(Trueright);
+                TruevisitRight.rob(Trueleft);
                 var image3D = TruevisitLeft.addImagesAnaglfy(Trueleft, Trueright);
                 bitmpe(image3D, TrueAnaglyphs);
 
-                ColorvisitLeft.rob(Colorleft);
-                ColorvisitRight.rob(Colorright);
+                ColorvisitLeft.rob(Colorright);
+                ColorvisitRight.rob(Colorleft);
                 image3D = TruevisitLeft.addImagesAnaglfy(Colorleft, Colorright);
                 bitmpe(image3D, ColorAnaglyphs);
 
-                GreyvisitLeft.rob(Greyleft);
-                GreyvisitRight.rob(Greyright);
+                GreyvisitLeft.rob(Greyright);
+                GreyvisitRight.rob(Greyleft);
                 image3D = TruevisitLeft.addImagesAnaglfy(Greyleft, Greyright);
                 bitmpe(image3D, GeryAnaglyphs);
 
-                HalfvisitLeft.rob(Halfleft);
-                HalfvisitRight.rob(Halfright);
+                HalfvisitLeft.rob(Halfright);
+                HalfvisitRight.rob(Halfleft);
                 image3D = TruevisitLeft.addImagesAnaglfy(Halfleft, Halfright);
                 bitmpe(image3D, HalfColorAnaglyphs);
 
@@ -206,7 +206,8 @@ namespace Anaglyph
                 image3D = TruevisitLeft.addImagesAnaglfy(Optimazeleft, Optimazeright);
                 bitmpe(image3D, OptimizedAnaglyphs);
 
-                OptimazevisitLeft.rob(Duboiszeleft);
+                OptimazevisitLeft.rob(Duboiszeleft); 
+                
                 OptimazevisitRight.rob(Duboisright);
                 image3D = TruevisitLeft.addImagesAnaglfy(Duboiszeleft, Duboisright);
 

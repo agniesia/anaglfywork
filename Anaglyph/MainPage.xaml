@@ -7,19 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 	<Page.TopAppBar>
-		<AppBar Margin="0,0,0,-141">
+		<AppBar Margin="0,0,0,-256">
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-				<AppBarButton x:Name="righteye" HorizontalAlignment="Center" Label="Right eye image" VerticalAlignment="Center" Icon="Pictures" Click="open_ClickRight" Margin="0"/>
-				<AppBarButton x:Name="lefteye" HorizontalAlignment="Center" Height="100" Label="Left eye image" VerticalAlignment="Center" Width="100" Icon="Pictures" Grid.Column="1" Click="open_ClickLeft" Margin="0"/>
+				<AppBarButton x:Name="righteye" HorizontalAlignment="Center" Label="Right eye image" VerticalAlignment="Center" Icon="Pictures" Click="open_ClickRight" Margin="0" FontSize="26.667" Grid.Column="1"/>
+				<AppBarButton x:Name="lefteye" HorizontalAlignment="Center" Height="100" Label="Left eye image" VerticalAlignment="Center" Width="100" Icon="Pictures" Click="open_ClickLeft" Margin="0" Grid.Column="0" FontSize="26.667"/>
 			</Grid>
 		</AppBar>
 	</Page.TopAppBar>
 
-    <Grid Height="768" Width="1366" Background="#FFFCF9F9">
+    <Grid Height="768" Width="1366">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="Assets/x.png"/>
+    	</Grid.Background>
     	<FlipView x:Name="flipimage" Margin="10">
     		<Image x:Name="TrueAnaglyphs" Margin="0" Tag="TrueAnaglyphs"/>
     		<Image x:Name="GeryAnaglyphs" Margin="0" Tag="GeryAnaglyphs"/>
@@ -28,7 +31,7 @@
     		<Image x:Name="OptimizedAnaglyphs" Tag="OptimizedAnaglyphs"/>
     		<Image x:Name="DuboisAnaglyphs" Tag="DuboisAnaglyphs"/>
     	</FlipView>
-    	<TextBlock x:Name="Warning" HorizontalAlignment="Left" Margin="267,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64" Foreground="#FF111010" >
+    	<TextBlock x:Name="Warning" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="64" Foreground="#FF111010" >
     	
     	</TextBlock>
 	</Grid>
