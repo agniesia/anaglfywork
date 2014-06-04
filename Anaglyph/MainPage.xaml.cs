@@ -50,7 +50,9 @@ namespace Anaglyph
             FOP.FileTypeFilter.Add(".jpeg");
             FOP.FileTypeFilter.Add(".png");
             FOP.FileTypeFilter.Add(".gif");
-            Windows.Storage.StorageFile file = await FOP.PickSingleFileAsync();
+            
+                Windows.Storage.StorageFile file = await FOP.PickSingleFileAsync();
+            
             // Uruchomienie wybierania pliku pojedynczego
 
             if (file != null)
@@ -105,40 +107,51 @@ namespace Anaglyph
         private async void open_ClickLeft(object sender, RoutedEventArgs e)
         {
             await open_Click(sender, e);
-            Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage(); // Stworzenie obiektu obrazu do wyświetlenia
-            bitmapImage.SetSource(fileStream);
-            w = bitmapImage.PixelWidth;
-            h = bitmapImage.PixelHeight;
-            sourcePixels = pixelData.DetachPixelData();
-            ImageLeft = new lab01biometria.image_RGB(sourcePixels, w, h);
-            try
+            Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+            
+            // Stworzenie obiektu obrazu do wyświetlenia
+            if (fileStream != null)
             {
-                Anaglyphy();
+                bitmapImage.SetSource(fileStream);
+                fileStream = null;
+                w = bitmapImage.PixelWidth;
+                h = bitmapImage.PixelHeight;
+                sourcePixels = pixelData.DetachPixelData();
+                ImageLeft = new lab01biometria.image_RGB(sourcePixels, w, h);
+                try
+                {
+                    Anaglyphy();
+                }
+                catch (NullReferenceException ex)
+                {
+                    this.Warning.Text = "Choose right image";
+                }
             }
-            catch (NullReferenceException ex)
-            {
-                this.Warning.Text = "Choose right image";
-            }
-
+            else this.Warning.Text = "Choose image again";
         }
         private async void open_ClickRight(object sender, RoutedEventArgs e)
         {
             await open_Click(sender, e);
             Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage(); // Stworzenie obiektu obrazu do wyświetlenia
-            bitmapImage.SetSource(fileStream);
-            w = bitmapImage.PixelWidth;
-            h = bitmapImage.PixelHeight;
-            sourcePixels = pixelData.DetachPixelData();
-            ImageRight = new lab01biometria.image_RGB(sourcePixels, w, h);
-            try
+            if (fileStream != null)
             {
-                Anaglyphy();
+                bitmapImage.SetSource(fileStream);
+                fileStream = null;
+                w = bitmapImage.PixelWidth;
+                h = bitmapImage.PixelHeight;
+                sourcePixels = pixelData.DetachPixelData();
+                ImageRight = new lab01biometria.image_RGB(sourcePixels, w, h);
+                try
+                {
+                    Anaglyphy();
+                }
+                catch (NullReferenceException ex)
+                {
+                    this.Warning.Text = "Choose left image";
+                }
             }
-            catch (NullReferenceException ex)
-            {
-                this.Warning.Text = "Choose left image";
-            }
-
+            else
+                this.Warning.Text = "Choose image again";
         }
         private void Anaglyphy()
         {

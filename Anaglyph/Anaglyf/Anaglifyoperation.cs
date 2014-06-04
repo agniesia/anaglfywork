@@ -36,6 +36,9 @@ namespace Anaglyfy
             ListNewp.Add(copyImage(rgb));
 
 
+           
+    // Tu pracuje się nad obrazem
+
 
             Parallel.For(0, 3, t =>
             {
@@ -54,6 +57,8 @@ namespace Anaglyfy
 
                 }
             });
+
+
             tab2int(ListNewp.ElementAt(0), ListNewp.ElementAt(1), ListNewp.ElementAt(2), rgb);
 
         }
